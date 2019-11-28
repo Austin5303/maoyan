@@ -12,16 +12,38 @@ import {
 import Swiper from 'swiper/js/swiper.js';
 import 'swiper/css/swiper.min.css';
 import Tools from "../fileters/index"
+import {
+    Tabs
+} from "antd-mobile"
 import { tsConstructorType } from '@babel/types';
 // import Tools from "../fileters"
 class Shows extends React.Component {
     constructor() {
         super();
         this.state = {
-            activeIndex: 0
+            activeIndex: 0,
+            title:'',
+            date:''
         }
     }
     render() {
+        const tabs = []
+        if(this.props.cinema.showData.movies){
+            for(var i=0;i<this.props.cinema.showData.movies.length;i++){
+                if(!this.state.activeIndex){
+                    this.state.activeIndex=0
+                }
+                if(this.state.activeIndex===i){
+                    // console.log(this.props.cinema.showData.movies[i].nm);
+                    this.props.cinema.showData.movies[i].shows.map(v=>{
+                        // console.log(v.dateShow);
+                        tabs.push({
+                            title:v.dateShow,
+                        })
+                    })
+                }
+            }
+        }
         return (
             <div>
                 {
@@ -86,7 +108,100 @@ class Shows extends React.Component {
                                         } */}
 
                                 </div></div>
-                            </div></div></div>
+                            </div></div>
+                            <Tabs tabs={tabs} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />} tabBarPosition='top' prerenderingSiblingsNumber={5} onTabClick={(tab) => {
+                                    // this.props.getCinemaList(0, this.props.match.params.id, tab.title)
+                                    this.setState({
+                                        title:tab.title
+                                    })
+                                    console.log(this.state.activeIndex,tab.title);
+                                }
+                                } tabBarActiveTextColor="#f03d37" tabBarUnderlineStyle={{
+                                    backgroundColor: "#f03d37",
+                                    border: "1px solid #f03d37"
+                                }}>
+
+                                
+                                <div className="listwrap">{
+
+                                    this.props.cinema.showData.movies ? this.props.cinema.showData.movies.map((v, i) => (
+                                        (this.state.activeIndex ? this.state.activeIndex : 0) === i ?
+                                            <div  key={v.id}>
+                                                {
+                                                v.shows.map((v,i)=>(
+                                                    this.state.title?(this.state.title=== v.dateShow?
+                                                        <div key={i}>{
+                                                            v.plist.map((v,i)=>(
+                                                                <div className="item-outer mb-line-b" key={i}>
+                                                                    <div className="item box-flex">
+                                                                        <div className="time-block">
+                                                                            <div className="begin">{v.tm}</div>
+                                                                            <div className="end"></div>
+                                                                        </div>
+                                                                        <div className="info-block">
+                                                                            <div className="lan">{v.lang}{v.tp}</div>
+                                                                            <div className="hall">{v.th}</div>
+                                                                        </div>
+                                                                        <div className="price">
+                                                                            <div className="sellPr">
+                                                                                <span className="d">¥</span>
+                                                                                {/* <span dangerouslySetInnerHTML={{__html:v.sellPr}}> */}
+                                                                                <span>
+                                                                                    <span className="sellPr">{v.vipPrice/1+3} </span>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div className="vipPrice">
+                                                                                <span className="icon">{v.vipPriceName}</span>
+                                                                                <span className="num">¥{v.vipPrice}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="button-block">
+                                                                            <div className="button" >购票</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            ))
+                                                        }</div>:'') :i===0?v.plist.map((v,i)=>(
+                                                            <div className="item-outer mb-line-b" key={i}>
+                                                                    <div className="item box-flex">
+                                                                        <div className="time-block">
+                                                                            <div className="begin">{v.tm}</div>
+                                                                            <div className="end"></div>
+                                                                        </div>
+                                                                        <div className="info-block">
+                                                                            <div className="lan">{v.lang}{v.tp}</div>
+                                                                            <div className="hall">{v.th}</div>
+                                                                        </div>
+                                                                        <div className="price">
+                                                                            <div className="sellPr">
+                                                                                <span className="d">¥</span>
+                                                                                {/* <span dangerouslySetInnerHTML={{__html:v.sellPr}}> */}
+                                                                                <span>
+                                                                                    <span className="sellPr">{v.vipPrice/1+3} </span>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div className="vipPrice">
+                                                                                <span className="icon">{v.vipPriceName}</span>
+                                                                                <span className="num">¥{v.vipPrice}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="button-block">
+                                                                            <div className="button" >购票</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                        )):''
+                                                ))
+                                                }
+                                            </div>
+                                            : ''
+                                    )) : <div>加载中</div>
+
+                                }</div>
+
+
+                            </Tabs>
+                            </div>
                         </div>
                     </div> : "加载中"
                 }
@@ -95,6 +210,7 @@ class Shows extends React.Component {
         )
     }
     componentDidMount() {
+        console.log(this.state.activeIndex,this.state.title);
         this.props.getCinema(this.props.match.params.id);
         var _this = this
         var swiper = new Swiper('.swiper-container', {
@@ -109,15 +225,17 @@ class Shows extends React.Component {
                 slideChange: function () {
                     // console.log(_this);
                     _this.setState({
-                        activeIndex: this.activeIndex
+                        activeIndex: this.activeIndex,
+                        title:""
                     })
+                    
                 },
             },
         });
         //   console.log(swiper.passedParams.on.slideChange());
-        this.setState({
-            activeIndex: swiper.passedParams.on.slideChange()
-        })
+        // this.setState({
+        //     activeIndex: swiper.passedParams.on.slideChange()
+        // })
     }
 
 
@@ -125,6 +243,7 @@ class Shows extends React.Component {
 }
 // 设置要使用的数据状态
 function mapStateToProps(state) {
+    console.log(state.search.cinema);
     return {
         cinema: state.search.cinema,
         movieid: state.search.movieid,
