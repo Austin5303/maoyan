@@ -2,15 +2,10 @@ import React from 'react';
 import {
     bindActionCreators
 } from "redux";
-import {
-    Link,
-} from 'react-router-dom'
 import searchActionCreator from '../store/actionCreator/serach/index'
 import {
     connect
 } from "react-redux"
-import Tools from "../fileters"
-let pageno = 2
 class MovieSearchList extends React.Component {
     render() {
         return (

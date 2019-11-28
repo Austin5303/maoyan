@@ -2,9 +2,6 @@ import React from 'react';
 import {
     bindActionCreators
 } from "redux";
-import {
-    Link,
-} from 'react-router-dom'
 import searchActionCreator from '../store/actionCreator/serach/index'
 import {
     connect
