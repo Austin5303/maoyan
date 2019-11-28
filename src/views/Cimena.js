@@ -2,6 +2,9 @@ import React from "react"
 import {
     connect
 } from "react-redux"
+import { Link}
+from "react-router-dom"
+import { StickyContainer, Sticky } from 'react-sticky';
 import {
     bindActionCreators
 } from "redux"
@@ -9,6 +12,14 @@ import {
     Tabs
 } from "antd-mobile"
 import actionCreator from "../store/actionCreator/movie"
+import Tools from "../fileters/index"
+
+function renderTabBar(props) {
+    return (<Sticky>
+      {({ style }) => <div style={{ ...style, zIndex: 1 }}><Tabs.DefaultTabBar {...props} page={3}/></div>}
+    </Sticky>);
+}
+
 class Cimema extends React.Component {
     renderContent = tab =>
         (<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '43px', width: "115px", backgroundColor: '#fff' }}>
@@ -33,8 +44,9 @@ class Cimema extends React.Component {
         //   ];
         const tabs = []
         this.props.movie.dates.map(v => {
-            tabs.push({
-                title: v.date
+            return tabs.push({
+                title:Tools.date(v.date),
+                date: v.date
             })
         }
         )
@@ -82,9 +94,15 @@ class Cimema extends React.Component {
                         </div>
                     </div>
                 </div>
+                
 
-                <Tabs tabs={tabs} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />} tabBarPosition='top' prerenderingSiblingsNumber={5} onTabClick={(tab) => {
-                    this.props.getCinemaList(0, this.props.match.params.id, tab.title)
+
+                
+
+
+                <StickyContainer>
+                <Tabs tabs={tabs} renderTabBar={renderTabBar} tabBarPosition='top' prerenderingSiblingsNumber={5} onTabClick={(tab) => {
+                    this.props.getCinemaList(0, this.props.match.params.id, tab.date)
                 }
                 } tabBarActiveTextColor="#f03d37" tabBarUnderlineStyle={{
                     backgroundColor: "#f03d37",
@@ -100,6 +118,7 @@ class Cimema extends React.Component {
                             {
                                 this.props.movie.cinemas.map(v => (
                                     <div className={"item mb-line-b"} key={v.id}>
+                                        <Link to={"/shows/"+v.id}>
                                         <div className={"title-block box-flex middle"}>
                                             <div className={"title line-ellipsis"}>
                                                 <span>{v.nm}</span>
@@ -125,18 +144,21 @@ class Cimema extends React.Component {
                                             <span>返场场次:</span>
                                             <span className={"time-line"}>{v.showTimes}</span>
                                         </div>
+                                        </Link>
                                     </div>
+                                   
                                 ))
                             }
                         </div>
                     </div>
                 </Tabs>
+                </StickyContainer>
             </div>
         )
     }
     componentDidMount() {
         this.props.getMovieDetail(this.props.match.params.id);
-        this.props.getCinemaList(0, this.props.match.params.id, this.props.movie.detailMovie.day)
+        this.props.getCinemaList(0, this.props.match.params.id,"2019-11-29")
 
 
         //         const _this = this
@@ -163,6 +185,9 @@ class Cimema extends React.Component {
 
 
     }
+    // componentWillReceiveProps(){
+    //     this.props.getCinemaList(0, this.props.match.params.id,this.props.movie.detailMovie.rt)
+    // }
 }
 function mapStateProps(state) {
     return state

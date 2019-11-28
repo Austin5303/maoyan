@@ -34,13 +34,14 @@ class Coming extends React.Component {
                                     position: "relative"
                                 }}>
                                     <a
-
-                                        href="http://www.alipay.com"
                                         style={{ display: 'block', width: '85px', height: "115px", margin: "12px" }}
                                     >
                                         <img
+                                            onClick={() => { this.props.history.push("/asgard/" + v.id) }
+
+                                            }
                                             src={v.img.replace("/w.h/", "/170.230/")}
-                                            alt=""
+                                            alt={v.nm}
                                             style={{ width: '85px', height: "115px", verticalAlign: 'top' }}
                                         />
                                     </a>
@@ -77,7 +78,7 @@ class Coming extends React.Component {
                                 <p className="coming-group-date">{v.detail[0].comingTitle}</p>
                                 {
                                     v.detail.map(x => (
-                                        <div className="coming-item" key={x.id}>
+                                        <div className="coming-item" key={x.id + Date.now() + 10}>
                                             <div className="coming-main-block">
                                                 <div className="coming-avatar" sort-flag="">
                                                     <div className="coming-default-img-bg">

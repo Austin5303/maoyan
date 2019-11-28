@@ -15,7 +15,7 @@ class GuardRouter extends Component {
     }
     render() {
         return (
-            <this.props.component></this.props.component>
+            <this.props.component {...this.props}></this.props.component>
         )
     }
 }
