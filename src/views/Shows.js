@@ -98,8 +98,8 @@ class Shows extends React.Component {
         this.props.getCinema(this.props.match.params.id);
         var _this = this
         var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 5,
-            spaceBetween: 20,
+            slidesPerView: "auto",
+            spaceBetween: 15,
             centeredSlides: true,
             loop: false,
             observer: true,
