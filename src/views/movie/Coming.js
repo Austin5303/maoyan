@@ -2,7 +2,7 @@ import React from "react"
 import actioncreator from '../../store/actionCreator/movie/index'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import switchdata from '../../filter/switchdata'
+import switchdata from '../../fileters/switchdata'
 function mapStateToProps(state) {
     return {
         expected: state.comingreducer.expected,

@@ -1,6 +1,6 @@
 import React from "react"
 import cityList from "../city"
-import switchdata from '../filter/switchdata'
+import switchdata from '../fileters/switchdata'
 class City extends React.Component {
     render() {
         return (
