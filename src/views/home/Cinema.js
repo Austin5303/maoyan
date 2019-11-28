@@ -38,7 +38,6 @@ class Cinema extends React.Component {
                             cityId: 1
                         }
                     }).then(({ data }) => {
-                        console.log(data.cinemas)
                         _this.setState({
                             data: data
                         })
