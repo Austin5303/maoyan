@@ -13,6 +13,7 @@ import MovieSearchList from "./views/MovieSearchList"
 import CinemaSearchList from "./views/CinemaSearchList"
 import City from "./views/City"
 import Cinema from './views/Cimena'
+import Asgard from './views/Asgard'
 class App extends React.Component {
   render() {
     return (
@@ -26,6 +27,7 @@ class App extends React.Component {
           <Route path={"/searchall"} component={SearchAll}></Route>
           <Route path={"/searchcinemas"} component={SearchCinemas}></Route>
           <Route path={"/city"} component={City}></Route>
+          <Route path={"/asgard/:movieid"} component={Asgard}></Route>
           <Route path={"/"} component={Home}></Route>
         </Switch>
       </div>
