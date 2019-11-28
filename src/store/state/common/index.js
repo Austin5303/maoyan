@@ -1,3 +1,3 @@
 export default {
-    headerName:"猫眼"
+    headerName:"猫眼电影"
 }

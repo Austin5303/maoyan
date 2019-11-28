@@ -12,11 +12,12 @@ img{
 }
 
 .App-header {
-  height: 45px;
+  height: 50.5px;
   line-height: 45px;
-  background-color: #eb0808;
+  background-color: #e54847;
+  border-bottom: 1px solid #e54847;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: center;
   position: relative;
 }
