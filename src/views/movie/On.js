@@ -11,7 +11,7 @@ import {
 import Tools from "../../fileters"
 import actionCreator from "../../store/actionCreator/movie"
 class On extends React.Component {
-    componentWillMount() {
+    componentWillUnmount() {
         window.onscroll = null
     }
     render() {
