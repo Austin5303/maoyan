@@ -13,7 +13,6 @@ export default class Home extends React.Component {
     render() {
         return (
             <div>
-                <div className="App-header">猫眼电影</div>
                 <Route path={"/movie"} render={() => <GuardRouter component={Movie}></GuardRouter>} ></Route>
                 <Route exact path={"/cinema"} render={() => <GuardRouter component={Cinema}></GuardRouter>}></Route>
                 <Route path={"/my"} render={() => <GuardRouter component={My}></GuardRouter>}></Route>

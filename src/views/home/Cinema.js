@@ -60,8 +60,8 @@ class Cinema extends React.Component {
     }
     render() {
         return (
-
             <div  ref="getWidth" style={{ width: "100vw", overflow: "hidden", marginBottom: "50px",background:"white" }}>
+                <div className="App-header">影院</div>
                 <div style={{background:"#f5f5f5"}} >
                     <div style={{float:"left",marginLeft:"2vw"}}>
                         <Link to="city" style={{color:"#333",lineHeight:"47px",background:"#f5f5f5"}} className={"city-name"}>{localStorage.cityName ? localStorage.cityName : "定位"}</Link>
