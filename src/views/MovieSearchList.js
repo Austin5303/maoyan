@@ -16,7 +16,7 @@ class MovieSearchList extends React.Component {
                 <div className="result result-list">
                     {
                         this.props.movies.keyword ? this.props.movieslist.map(v => (
-                            <div className="cell movie" key={v.id} onClick={()=>this.props.history.push("/asgard/"+v.id)}>
+                            <div className="cell movie" key={v.id+Date.now()} onClick={()=>this.props.history.push("/asgard/"+v.id)}>
                                 <img className="poster" src={Tools.pic(v.img)} />
                                 <div className="info">
                                     <div className="name-score">
@@ -53,7 +53,6 @@ class MovieSearchList extends React.Component {
 }
 // 设置要使用的数据状态
 function mapStateToProps(state) {
-    console.log(state.search.movieslist);
     // console.log(state.search.cinemas.list);
 
     return {

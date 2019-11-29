@@ -10,7 +10,16 @@ img{
 .App-logo {
   height: 40vmin;
 }
+@font-face {
+  font-family: stonefont;
+  src: url('//vfile.meituan.net/colorstone/1881db7c788dfdf9d2d00a926734d0973168.eot');
+  src: url('//vfile.meituan.net/colorstone/1881db7c788dfdf9d2d00a926734d0973168.eot?#iefix') format('embedded-opentype'),
+       url('//vfile.meituan.net/colorstone/632958fd02509dc28d915375c3a835e02088.woff') format('woff');
+}
 
+.stonefont {
+  font-family: stonefont;
+}
 .App-header {
   height: 50.5px;
   line-height: 45px;
@@ -882,7 +891,6 @@ margin-top: 0px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  overflow-x: hidden;
 }
 .shows  .info-block .lan {
   margin-top: 2px;
@@ -963,7 +971,23 @@ margin-top: 0px;
   color: #fff;
   background-color: #f90;
 }
-
+.tuan-wrap .tuan-list {
+  position: relative;
+  margin: 0 0 0 15px;
+}
+.tuan-wrap .tuan-list .tuan-title {
+  line-height: 45px;
+  height: 45px;
+  font-size: 15px;
+  color: #666;
+}
+.tuan-wrap .tuan-list .tuan-item {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  padding: 13px 0;
+  overflow: hidden;
+}
 /*郭义杰*/
 .page-wrap{
   width: 100%;

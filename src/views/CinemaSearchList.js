@@ -17,7 +17,7 @@ class MovieSearchList extends React.Component {
                             <div className="list">
                                 {
                                     this.props.cinemaslist.map(v => (
-                                        <div className="cell cinema" onClick={() => this.props.history.push("/shows/" + v.id)} id={v.id} key={v.id + Date.now()}>
+                                        <div className="cell cinema" onClick={() => this.props.history.push("/shows/" + v.id)} id={v.id} key={v.id + Date.now() + 3}>
                                             <div className="info">
                                                 <p className="name-price">
                                                     <span className="name one-line">{v.nm}</span>

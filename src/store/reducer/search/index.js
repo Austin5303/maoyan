@@ -14,7 +14,7 @@ export default function (state = initState, { type, payload }) {
     if (type === "UP_SEARCH_CINEMAS_LIST") {
         // console.log(payload.data.keyword,state.val);
         // state.movieslist = payload.data || {}
-        state.cinemaslist = [...state.cinemaslist, ...payload.data.cinemas]
+        state.cinemaslist =  payload.data.cinemas
     }
     if (type === "UP_CINEMA") {
         state.cinema = payload.data
