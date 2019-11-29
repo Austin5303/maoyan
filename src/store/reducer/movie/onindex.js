@@ -16,6 +16,7 @@ export default function (state = initState, { type, payload }) {
         state.detailMovie = payload.detailMovie
     }
     else if (type === actionType.GET_CINEMES) {
+        state.cinemas.length=0
         state.cinemas = payload.cinemas
         state.dates = payload.showDays.dates
     }

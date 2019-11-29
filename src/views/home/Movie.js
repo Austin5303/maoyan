@@ -13,6 +13,7 @@ export default class Movie extends React.Component {
     render() {
         return (
             <div>
+                <div className="App-header">猫眼电影</div>
                 <nav className="topbar">
                     <div className={"white-bg topbar-bg"}>
                         <div className={"city-entry"}>

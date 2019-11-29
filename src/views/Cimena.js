@@ -130,7 +130,7 @@ class Cimema extends React.Component {
                                                         <div className={"flex line-ellipsis"}>{v.addr}</div>
                                                         <div className={"distance"}>{v.distance}</div>
                                                     </div>
-                                                    <div className={"label-block"}>{v.tag.allowRefund ? <div className={"allowRefund"}>退</div> : null}{v.tag.sell ? <div className={"sell"}>改签</div> : null} {v.tag.snack ? <div className={"snack"}>小吃</div> : null}{v.tag.endorse ? <div className={"endorse"}>折扣卡</div> : null}{v.tag.hallType ? v.tag.hallType.map((v, i) => (<div key={i} className={"hallType"}>{v}</div>)) : null}
+                                                    <div className={"label-block"}>{v.tag.allowRefund ? <div className={"allowRefund"}>退</div> : null}{v.tag.sell ? <div className={"sell"}>改签</div>: null}{v.tag.snack?<div className={"snack"}>小吃</div> : null}{v.tag.endorse ? <div className={"endorse"}>折扣卡</div> : null}{v.tag.hallType ? v.tag.hallType.map((v, i) => (<div key={i} className={"hallType"}>{v}</div>)) : null}
                                                     </div>
                                                     <div className={"discount-block"}>
                                                         <div className={"discount-label normal card"}>
@@ -158,19 +158,17 @@ class Cimema extends React.Component {
     componentDidMount() {
         this.props.getMovieDetail(this.props.match.params.id);
         this.props.getCinemaList(0, this.props.match.params.id, "2019-11-29")
-
-
         //         const _this = this
         //         let offset= 0;                
         //         function fn(){         
         //             var timer = null;
         //             return function (){
-        //                 if(timer){
+        //                 if(offset){
         //                     clearTimeout(timer)
         //                 }
         //                 timer = setTimeout(()=>{
         //                 offset+=20
-        //                 _this.props.getCinemaList.call(_this,offset)
+        //                 _this.props.getCinemaList.call(_this,offset,_this.props.match.params.id, "2019-11-29")
         //                 },2000) 
         //             }
         //         }

@@ -111,7 +111,7 @@ export default {
                 movieId: id / 1,
                 day: tab,
                 offset,
-                limit: 20,
+                limit:20,
                 districtId: -1,
                 lineId: -1,
                 hallType: -1,
