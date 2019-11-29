@@ -38,7 +38,11 @@ export default function (state = initState, { type, payload }) {
 
         }
     }
-
+    
+    if(type === "UP_CHANGE_NUM"){
+        state.count = 1
+        state.xiaoji = 0
+    }
 
 
     return state

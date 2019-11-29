@@ -55,7 +55,13 @@ export const downcount = (price) => (
         price
     }
 })
-
+export const upchangenum = () => (
+    {
+    type:"UP_CHANGE_NUM",
+    payload:{
+        
+    }
+})
 
 export default {
     getMoviesAndCinemas(){
@@ -101,6 +107,11 @@ export default {
     onIncreaseClick(price){
         return async (dispatch)=>{
             dispatch(downcount(price))            
+        };
+    },
+    changeBuyNum(){
+        return async (dispatch)=>{
+            dispatch(upchangenum())            
         };
     },
     

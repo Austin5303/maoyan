@@ -105,25 +105,25 @@ class Deal extends React.Component {
                 </div>
 
                 <div className="bottom" style={{position:"fixed",width:"100%",bottom:"0",background:"#fff",padding:"10px"}}>
-                    <div className="xiaoji" style={{}}>
-                        <span>随时可退</span>
-                        <span>小计 <b>￥</b>{count?count:this.props.location.state.price}</span>
+                    <div className="xiaoji" style={{height:"50px"}}>
+                        <span style={{display:"inline-block",float:"left",fontSize:"16px",color:"#86C92F",margin:"14px"}}>随时可退</span>
+                        <span style={{display:"inline-block",float:"right",fontSize:"16px",color:"#000",margin:"5px",paddingRight:"30px"}}>小计 <span>￥</span><span style={{fontSize:"30px",color:"#E54847"}}>{count?count:this.props.location.state.price}</span></span>
                     </div>
+                    <div style={{float:"left",width:"100%",textAlign:"center"}}>确认支付</div>
                 </div>
-                <button onClick={()=>this.props.history.go(-1)}>111</button>
             </div>
         )
     }
     componentDidMount(){
-        console.log(this.props.location.state)
+        console.log(this.props)
         const {title} = this.props.location.state;
         const arr = title.split("+");
         this.setState({
             foods:arr
         });
     }
-    componentWillMount(){
-
+    componentWillUnmount(){
+        this.props.changeBuyNum()
     }
 }
 // 设置要使用的数据状态
