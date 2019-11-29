@@ -1074,6 +1074,64 @@ margin-top: 0px;
   color: #fff;
   background-color: #f03d37;
 }
+.deal-info {
+  color: #999;
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  /* padding: .29rem .2rem; */
+}
+.deal-info>header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding: 15px;
+}
+/* .deal-info>header .deal-info-image-middle {
+  height: 1.64rem;
+}
+.deal-info>header .deal-info-image {
+  width: 1.8rem;
+  min-height: 2rem;
+  text-align: center;
+  overflow: hidden;
+  margin-right: .2rem;
+  padding-left: .06rem;
+}*/
+.deal-info>header h1 {
+  margin: 0 0 10px 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  text-align: left;
+}
+.deal-info>header .hot-tag {
+  /* position: absolute; */
+  left: 0;
+  top: 13px;
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+  background-color: #f90;
+  font-size: 12px;
+  padding: 0 5px;
+  color: #fff;
+  border-bottom-right-radius: 2px;
+}
+.deal .text-info {
+  margin: 0 0 10px 10px;
+  font-size: 16px;
+  text-align: left;
+}
+.deal .price {
+  margin: 0 0 0 10px;
+  font-size: 20px;
+  text-align: left;
+  color: #f03d37;
+}
+
+
 
 /*郭义杰*/
 .page-wrap{
