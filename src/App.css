@@ -10,7 +10,16 @@ img{
 .App-logo {
   height: 40vmin;
 }
+@font-face {
+  font-family: stonefont;
+  src: url('//vfile.meituan.net/colorstone/1881db7c788dfdf9d2d00a926734d0973168.eot');
+  src: url('//vfile.meituan.net/colorstone/1881db7c788dfdf9d2d00a926734d0973168.eot?#iefix') format('embedded-opentype'),
+       url('//vfile.meituan.net/colorstone/632958fd02509dc28d915375c3a835e02088.woff') format('woff');
+}
 
+.stonefont {
+  font-family: stonefont;
+}
 .App-header {
   height: 50.5px;
   line-height: 45px;
@@ -882,7 +891,6 @@ margin-top: 0px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  overflow-x: hidden;
 }
 .shows  .info-block .lan {
   margin-top: 2px;
@@ -963,7 +971,23 @@ margin-top: 0px;
   color: #fff;
   background-color: #f90;
 }
-
+.tuan-wrap .tuan-list {
+  position: relative;
+  margin: 0 0 0 15px;
+}
+.tuan-wrap .tuan-list .tuan-title {
+  line-height: 45px;
+  height: 45px;
+  font-size: 15px;
+  color: #666;
+}
+.tuan-wrap .tuan-list .tuan-item {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  padding: 13px 0;
+  overflow: hidden;
+}
 /*郭义杰*/
 .page-wrap{
   width: 100%;
@@ -1445,7 +1469,7 @@ img {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzhCNEEzQTE0NzNBMTFFNkEyMkFFN0M2MDc0NjIyN0YiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzhCNEEzQTA0NzNBMTFFNkEyMkFFN0M2MDc0NjIyN0YiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2Mzg3REIwMzQ3MzcxMUU2QTIyQUU3QzYwNzQ2MjI3RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2Mzg3REIwNDQ3MzcxMUU2QTIyQUU3QzYwNzQ2MjI3RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoL90/MAAAAZSURBVHjaYvr//z8DCLM8evToPwMQAAQYAGuLCaa37ZaAAAAAAElFTkSuQmCC) 0 bottom repeat-x;
 }
 
-
+/* Login */
 .my-center .group .list {
   overflow: hidden;
 }
@@ -1511,6 +1535,118 @@ img {
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
 }
+.login header{
+  width: 100%;
+  height: 55px;
+  background: #df2d2d;
+}
+.login span:nth-child(1){
+  float: left;
+  font-size: 55px;
+  line-height: 40px;
+  color: #eee;
+}
+.login span:nth-child(2){
+  line-height: 55px;
+  font-size: 20px;
+  color: white;
+}
+.login .tap .btn {
+  width: 100%;
+  height: 50px;
+}
+.login .tap .btn span{
+  width: 50%;
+  font-size: 15px;
+  color: black;
+  text-align: center;
+  line-height: 50px;
+}
+.login .tap .heng{
+  width: 100%;
+  height: 5px;
+  background: #ececec;
+  position: relative;
+}
+.login .tap .heng p{
+  width: 45%;
+  height: 5px;
+  background: orange;
+  position: absolute;
+  left: 3%;
+}
+.login .tap .formm input {
+  width: 90%;
+  height: 40px;
+  display: block;
+  margin: 5px auto;
+  border: 1px solid white;
+  outline: none;
+  font-size: 17px;
+}
+.login .tap .formm input::placeholder{
+  text-indent: 20px;
+  font-size: 17px;
+  color: #555;
+}
+.login .tap .formm input:focus{
+  background: #eee;
+  border-radius: 2px;
+}
+.login .tap .formm p{
+  width: 90vw;
+  height: 30px;
+  background: #df2d2d;
+  border-radius: 2px;
+  margin: 10px auto;
+  line-height: 30px;
+  color: #eee;
+  cursor: pointer;
+}
+.login .inn::placeholder{
+  font-size: 16px;
+  text-indent: 10px;
+}
+.login .inn:focus{
+  background: #eee;
+  border-radius: 2px;
+}
+.login input[type=checkbox]{
+float: left;
+-webkit-tap-highlight-color: transparent;
+word-break: break-all;
+color: inherit;
+font: inherit;
+font-family: inherit;
+font-size: inherit;
+-webkit-appearance: none;
+width:  20px;
+height: 20px;
+margin: 0;
+border: 1px solid #d6d6d6;
+text-align: center;
+vertical-align: middle;
+line-height: 20px;
+outline: 0;
+border-radius: 3px;
+overflow: hidden;
+}
+.login input[type=checkbox]:checked::after{
+content: "✓";
+font-size: 25px;
+color: white;
+background: #df2d2d;
+}
+.login .di {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+
+
+
+
+
 
 
 

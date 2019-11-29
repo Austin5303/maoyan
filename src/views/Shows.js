@@ -20,8 +20,8 @@ class Shows extends React.Component {
         super();
         this.state = {
             activeIndex: 0,
-            title:'',
-            date:''
+            title:"",
+            date:'',
         }
     }
     render() {
@@ -107,11 +107,13 @@ class Shows extends React.Component {
 
                                 </div></div>
                             </div></div>
+                            <div className="k" >
                             <Tabs tabs={tabs} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />} tabBarPosition='top' prerenderingSiblingsNumber={5} onTabClick={(tab) => {
                                     // this.props.getCinemaList(0, this.props.match.params.id, tab.title)
                                     this.setState({
                                         title:tab.title
                                     })
+                                    console.log(this.state.title);
                                 }
                                 } tabBarActiveTextColor="#f03d37" tabBarUnderlineStyle={{
                                     backgroundColor: "#f03d37",
@@ -193,14 +195,30 @@ class Shows extends React.Component {
                                     )) : <div>加载中</div>
 
                                 }</div>
+                                    
 
+                            </Tabs></div>
+        <div className="tuan-wrap">
+        <div className="gap" style={{height: "10px", backgroundColor:" #f0f0f0"}}></div>
+        <div className="tuan-list">
+            <div className="tuan-title mb-line-b">影院超值套餐</div>
+            {
+            this.props.cinema.dealList ? this.props.cinema.dealList.dealList.map(v => (
+                    <div className="tuan-item" key={v.id}>
+                        {v.curNumberDesc}
+                    </div>
+            )) : ''
 
-                            </Tabs>
+        }
+        </div>
+        
+        
+        </div>
+
                             </div>
                         </div>
                     </div> : "加载中"
                 }
-                    <div className="tuan-wrap"></div>
             </div>
         )
     }
@@ -218,11 +236,11 @@ class Shows extends React.Component {
             on: {
                 slideChange: function () {
                     // console.log(_this);
+                    // const dateshow = _this.props.cinema.showData.movies[_this.state.activeIndex].shows[0].dateShow;
                     _this.setState({
                         activeIndex: this.activeIndex,
-                        title:""
+                        // title:dateshow
                     })
-                    
                 },
             },
         });
