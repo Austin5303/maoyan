@@ -1423,8 +1423,114 @@ img {
   color: #999;
 }
 
+/* Login */
 
-
+.login header{
+  width: 100%;
+  height: 55px;
+  background: #df2d2d;
+}
+.login span:nth-child(1){
+  float: left;
+  font-size: 55px;
+  line-height: 40px;
+  color: #eee;
+}
+.login span:nth-child(2){
+  line-height: 55px;
+  font-size: 20px;
+  color: white;
+}
+.login .tap .btn {
+  width: 100%;
+  height: 50px;
+}
+.login .tap .btn span{
+  width: 50%;
+  font-size: 15px;
+  color: black;
+  text-align: center;
+  line-height: 50px;
+}
+.login .tap .heng{
+  width: 100%;
+  height: 5px;
+  background: #ececec;
+  position: relative;
+}
+.login .tap .heng p{
+  width: 45%;
+  height: 5px;
+  background: orange;
+  position: absolute;
+  left: 3%;
+}
+.login .tap .formm input {
+  width: 90%;
+  height: 40px;
+  display: block;
+  margin: 5px auto;
+  border: 1px solid white;
+  outline: none;
+  font-size: 17px;
+}
+.login .tap .formm input::placeholder{
+  text-indent: 20px;
+  font-size: 17px;
+  color: #555;
+}
+.login .tap .formm input:focus{
+  background: #eee;
+  border-radius: 2px;
+}
+.login .tap .formm p{
+  width: 90vw;
+  height: 30px;
+  background: #df2d2d;
+  border-radius: 2px;
+  margin: 10px auto;
+  line-height: 30px;
+  color: #eee;
+  cursor: pointer;
+}
+.login .inn::placeholder{
+  font-size: 16px;
+  text-indent: 10px;
+}
+.login .inn:focus{
+  background: #eee;
+  border-radius: 2px;
+}
+.login input[type=checkbox]{
+float: left;
+-webkit-tap-highlight-color: transparent;
+word-break: break-all;
+color: inherit;
+font: inherit;
+font-family: inherit;
+font-size: inherit;
+-webkit-appearance: none;
+width:  20px;
+height: 20px;
+margin: 0;
+border: 1px solid #d6d6d6;
+text-align: center;
+vertical-align: middle;
+line-height: 20px;
+outline: 0;
+border-radius: 3px;
+overflow: hidden;
+}
+.login input[type=checkbox]:checked::after{
+content: "✓";
+font-size: 25px;
+color: white;
+background: #df2d2d;
+}
+.login .di {
+  margin-left: 10px;
+  margin-top: 10px;
+}
 
 
 
