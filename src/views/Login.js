@@ -6,6 +6,7 @@ export default class Login extends React.Component{
             this.state = {
                 index:1,
             }
+            this.timer = null
         }
     move(e){
         let timer
@@ -42,17 +43,17 @@ export default class Login extends React.Component{
     code(e){
         let time = 60;
         this.refs.b.disabled = true;
-        const timer = setInterval(()=>{
+        this.timer = setInterval(()=>{
             if(this.state.index/1 === 2){
                 this.refs.b.innerHTML = time+"s";
                 time-=1;
                 if(time === 1){
-                    clearInterval(timer)
+                    clearInterval(this.timer)
                     this.refs.b.innerHTML = "获取验证码";
                     this.refs.b.disabled = false;
                 }
             }else{
-                clearInterval(timer)
+                clearInterval(this.timer)
             }
         },1000)
         this.refs.confineCode.disabled = false;
@@ -66,6 +67,9 @@ export default class Login extends React.Component{
                 alert(data.msg)
             }
         })
+    }
+    componentWillUnmount(){
+        clearInterval(this.timer)
     }
     render(){
         return (
@@ -133,6 +137,7 @@ export default class Login extends React.Component{
                 if(data.ok/1 === 1){
                     alert("登陆成功")
                     localStorage.userName = this.refs.name.value;
+                    this.props.history.go(-1)
                 }else{
                     alert(data.msg)
                 }
@@ -146,6 +151,7 @@ export default class Login extends React.Component{
                 if(data.ok/1 === 1){
                     alert("登陆成功")
                     localStorage.userName = this.refs.phoneNumber.value;
+                    this.props.history.go(-1)
                 }else{
                     alert(data.msg)
                 }

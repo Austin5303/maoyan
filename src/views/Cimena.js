@@ -157,7 +157,7 @@ class Cimema extends React.Component {
     }
     componentDidMount() {
         this.props.getMovieDetail(this.props.match.params.id);
-        this.props.getCinemaList(0, this.props.match.params.id, "2019-11-29")
+        this.props.getCinemaList(0, this.props.match.params.id,this.props.location.state.date)
         //         const _this = this
         //         let offset= 0;                
         //         function fn(){         

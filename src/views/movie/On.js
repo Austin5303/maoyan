@@ -12,6 +12,7 @@ import Tools from "../../fileters"
 import actionCreator from "../../store/actionCreator/movie"
 class On extends React.Component {
     componentWillUnmount() {
+        document.documentElement.scrollTop=0
         window.onscroll = null
     }
     render() {
@@ -22,7 +23,7 @@ class On extends React.Component {
                         // console.log(this.props.movie)
                         this.props.movie.movieList.map(v => (
                             <div key={v.id} className={"on-main-block"}>
-                                <Link to={"/cinema/movie/" + v.id} >
+                                <Link to={{pathname:"/cinema/movie/" + v.id,state:{date:v.rt>Tools.date2()?v.rt:Tools.date2()}}} >
                                     <div className={"on-avator"}>
                                         <div className={"on-img-ig"}>
                                             <img src={Tools.pic(v.img)} alt=""></img>
