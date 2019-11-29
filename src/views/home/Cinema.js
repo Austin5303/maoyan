@@ -8,6 +8,7 @@ class Cinema extends React.Component {
             data: [],
         }
         this.page = 20;
+        console.log(this.props) 
     }
     componentDidMount() {
         axios.get("/ajax/cinemaList", {
@@ -33,7 +34,7 @@ class Cinema extends React.Component {
                     _this.page += 20
                     axios.get("/ajax/cinemaList", {
                         params: {
-                            day: "2019-11-26",
+                            day: "2019-11-30",
                             limit: _this.page,
                             cityId: 1
                         }
@@ -60,14 +61,26 @@ class Cinema extends React.Component {
     render() {
         return (
 
-            <div ref="getWidth" style={{ width: "100vw", overflow: "hidden", marginBottom: "50px",background:"white" }}>
-                <Link to="searchcinemas">搜索</Link>
+            <div  ref="getWidth" style={{ width: "100vw", overflow: "hidden", marginBottom: "50px",background:"white" }}>
+                <div style={{background:"#f5f5f5"}} >
+                    <div style={{float:"left",marginLeft:"2vw"}}>
+                        <Link to="city" style={{color:"#333",lineHeight:"47px",background:"#f5f5f5"}} className={"city-name"}>{localStorage.cityName ? localStorage.cityName : "定位"}</Link>
+                        <i className={"city-entry-arrow"}></i>
+                    </div>
+                    <div className="SearchAll-header">
+                        <div className="input-wrapper">
+                            <img className="search-icon" src={"http://s0.meituan.net/bs/?f=myfe/canary:/static/deploy/images/search.png"} alt="" />
+                            <input className="search-input" onClick={()=>this.props.history.push("/searchall")} style={{width:"30vw"}} type="text"  placeholder="搜影院"></input>
+                        </div>
+                    </div>
+                </div>
+
                 {
                     this.state.data.cinemas ? this.state.data.cinemas.map(v => (
-                        <div key={v.id} style={{ textAlign: "left", fontFamily: "PingFangSC-Regular", fontSize: "14px", color: "#777", backgroundSize: "1px", padding: "13px 15px 13px 0", marginLeft: "15px", backgroundColor: "#fff", position: "relative", borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc", width: "100vw", overflow: "hidden" }}>
+                        <div key={v.id} style={{ textAlign: "left", fontFamily: "PingFangSC-Regular", fontSize: "14px", color: "#777", backgroundSize: "1px", padding: "13px 15px 13px 0", marginLeft: "15px", backgroundColor: "#fff", position: "relative", borderBottom: "1px solid #eeeeee", width: "100vw", overflow: "hidden" }}>
                             <p style={{ whiteSpace: "nowrap", lineHeight: "23px", fontSize: "16px", color: "#000" }}>{v.nm}<span style={{ whiteSpace: "nowrap", lineHeight: 1.5, color: "#f03d37", fontSize: "18px", }}>{v.sellPrice}<span style={{ whiteSpace: "nowrap", fontSize: "11px", color: "#f03d37", marginLeft: "3px" }}>元起</span></span></p>
                             <p style={{ lineHeight: 1.5, fontSize: "13px", color: "#666", textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap", float: "left", color: "#666", width: "70vw" }}>{v.addr}</p><span style={{ marginRight: "5px" }}>{v.distance}</span>
-                            <div style={{ color: "#589daf", marginTop: "5px", width: "100vw", overflow: "hidden" }}>
+                            <div style={{ color: "#589daf", marginTop: "5px", width: "100vw", }}>
 
                                 {v.tag.allowRefund ? <span style={{ border: "1px solid #589daf", color: "#589daf", marginRight: "5px", borderRadius: "2px", fontSize: ".6rem", padding: "0px 2px" }}>退</span> : null}
                                 {v.tag.sell ? <span style={{ border: "1px solid #589daf", color: "#589daf", marginRight: "5px", borderRadius: "2px", fontSize: ".6rem", padding: "0px 2px" }}>改签</span> : null}
