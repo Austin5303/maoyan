@@ -222,17 +222,14 @@ class Shows extends React.Component {
                                     <span>¥</span><span className="num">{v.price}</span>
                                 </span>
                             </div>
-                            <div className="buy-btn" onClick={()=>this.props.history.push({ pathname: "/deal", state: {price:v.price,person:v.recommendPersonNum,title:v.title,img:v.imageUrl.replace("w.h", "440.0")} })}>去购买</div>
+                            <div className="buy-btn"  onClick={()=>this.props.history.push({ pathname: "/deal", state: {price:v.price,person:v.recommendPersonNum,title:v.title,img:v.imageUrl.replace("w.h", "440.0")} })}>去购买</div>
                         </div>
                     </div>
             )) : ''
 
         }
         </div>
-        
-        
         </div>
-
                             </div>
                         </div>
                     </div> : "加载中"

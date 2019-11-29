@@ -20,4 +20,6 @@ export default {
     val: "",
     offset: "",
     movieid: "",
+    count:1,
+    xiaoji:0
 }

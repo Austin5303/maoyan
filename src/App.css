@@ -1130,6 +1130,25 @@ margin-top: 0px;
   text-align: left;
   color: #f03d37;
 }
+.deal .detail{
+  background: #fff;
+  padding: 5px;
+}
+.deal .detail h1{
+  margin: 5px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 16px;
+}
+.deal .food{
+  text-align: left;
+  font-size: 15px;
+  margin: 5px;
+  color: #999;
+}
+.deal .num i{
+  float: right;
+}
 
 
 

@@ -41,7 +41,20 @@ export const upMovieId = (id) => ({
         id
     }
 })
-
+export const upcount = (price) => (
+    {
+    type:"UP_COUNT",
+    payload:{
+        price
+    }
+})
+export const downcount = (price) => (
+    {
+    type:"DOWN_COUNT",
+    payload:{
+        price
+    }
+})
 
 
 export default {
@@ -79,5 +92,17 @@ export default {
         return async (dispatch)=>{
             dispatch(upMovieId(id))            
         };
-    }
+    },
+    onDecreaseClick(price){
+        return async (dispatch)=>{
+            dispatch(upcount(price))            
+        };
+    },
+    onIncreaseClick(price){
+        return async (dispatch)=>{
+            dispatch(downcount(price))            
+        };
+    },
+    
+    
 }

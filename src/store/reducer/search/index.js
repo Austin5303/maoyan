@@ -25,6 +25,21 @@ export default function (state = initState, { type, payload }) {
     if (type === "CHANGE_MOVIE_ID") {
         state.movieid = payload.id
     }
+    if(type === "UP_COUNT"){
+        state.count = ++state.count
+        state.xiaoji =( payload.price * state.count/1).toFixed(1)
+    }
+    if(type === "DOWN_COUNT"){
+        if(state.count===1){
+            state.count = state.count
+        }else{
+            state.count = --state.count    
+            state.xiaoji =( payload.price * state.count/1).toFixed(1)
+
+        }
+    }
+
+
 
     return state
 }
