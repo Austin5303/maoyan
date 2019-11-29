@@ -988,6 +988,93 @@ margin-top: 0px;
   padding: 13px 0;
   overflow: hidden;
 }
+.tuan-wrap .tuan-list .tuan-item img {
+  display: inline-block;
+  width: 92px;
+  height: 92px;
+  float: left;
+}
+.tuan-wrap .tuan-list .tuan-item .hot-tag {
+  position: absolute;
+  left: 0;
+  top: 13px;
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+  background-color: #fa5939;
+  font-size: 12px;
+  padding: 0 5px;
+  color: #fff;
+  border-bottom-right-radius: 2px;
+}
+.tuan-wrap .tuan-list .tuan-item .item-info {
+  position: relative;
+  margin: 0 15px 0 102px;
+  height: 92px;
+  overflow: hidden;
+}
+.tuan-wrap .tuan-list .tuan-item .item-info .title {
+  font-size: 14px;
+  line-height: 18px;
+  color: #333;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.tuan-wrap .tuan-list .tuan-item .item-info .title span {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 1px;
+  margin-right: 7px;
+  padding: 0 4px;
+  font-size: 10px;
+  line-height: 15px;
+  height: 15px;
+  background: #f90;
+  border-radius: 2px;
+  color: #fff;
+}
+.tuan-wrap .tuan-list .tuan-item .item-info .sell-num {
+  display: inline-block;
+  position: absolute;
+  bottom: 34px;
+  right: 0;
+  line-height: 16px;
+  height: 16px;
+  font-size: 12px;
+  color: #999;
+}
+.tuan-wrap .tuan-list .tuan-item .item-info .price {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.tuan-wrap .tuan-list .tuan-item .item-info .price .sell-price {
+  color: #f03d37;
+  display: inline-block;
+}
+.tuan-wrap .tuan-list .tuan-item .item-info .price .sell-price span {
+  font-size: 14px;
+}
+.tuan-wrap .tuan-list .tuan-item .item-info .price .sell-price .num {
+  font-size: 17px;
+}
+.tuan-wrap .tuan-list .tuan-item .item-info .buy-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  padding: 0 8px;
+  height: 27px;
+  line-height: 27px;
+  font-size: 12px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #f03d37;
+}
+
 /*郭义杰*/
 .page-wrap{
   width: 100%;

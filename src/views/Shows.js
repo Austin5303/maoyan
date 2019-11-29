@@ -113,7 +113,7 @@ class Shows extends React.Component {
                                     this.setState({
                                         title:tab.title
                                     })
-                                    console.log(this.state.title);
+                                    // console.log(this.state.title);
                                 }
                                 } tabBarActiveTextColor="#f03d37" tabBarUnderlineStyle={{
                                     backgroundColor: "#f03d37",
@@ -203,9 +203,27 @@ class Shows extends React.Component {
         <div className="tuan-list">
             <div className="tuan-title mb-line-b">影院超值套餐</div>
             {
-            this.props.cinema.dealList ? this.props.cinema.dealList.dealList.map(v => (
-                    <div className="tuan-item" key={v.id}>
-                        {v.curNumberDesc}
+            this.props.cinema.dealList ? this.props.cinema.dealList.dealList.map((v,i) => (
+                    <div className="tuan-item mb-line-b" key={i}>
+                        <img src={v.imageUrl.replace("w.h", "440.0")}></img>
+                        {
+                            v.cardTag?<span className="hot-tag">HOT</span>:""
+                        }
+                        <div className="item-info">
+                            <div className="title">
+                              {
+                                  v.recommendPersonNum===1?<span>单人</span>:(v.recommendPersonNum===2?<span>双人</span>:<span>多人</span>)
+                              }  
+                              {v.title}
+                            </div>
+                            <div className="sell-num">{v.curNumberDesc}</div>
+                            <div className="price">
+                                <span className="sell-price">
+                                    <span>¥</span><span className="num">{v.price}</span>
+                                </span>
+                            </div>
+                            <div className="buy-btn" onClick={()=>this.props.history.push({ pathname: "/deal", state: {price:v.price,person:v.recommendPersonNum,title:v.title,img:v.imageUrl.replace("w.h", "440.0")} })}>去购买</div>
+                        </div>
                     </div>
             )) : ''
 
