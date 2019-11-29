@@ -41,13 +41,15 @@ class On extends React.Component {
                                             </div>
                                             <div className={"tab-content"}>
                                                 <div className={"score line-ellipsis"}>
-                                                    <span className={v.sc > 0 ? "score-suffix" : "gard"}>
+                                                    <span className={v.showst=== 3 ? "score-suffix" : "gard"}>
                                                         {
-                                                            v.sc > 0 ? "观众评" : v.wish
+                                                            v.showst=== 3 ? (v.sc>0?"观众评":"") : v.wish
                                                         }
                                                     </span>
-                                                    <span className={v.sc > 0 ? "gard" : "score-suffix"}>
-                                                        {v.sc > 0 ? v.sc : "想看"}
+                                                    <span className={v.showst=== 3 ?(v.sc>0?"gard":"")  : "score-suffix"} style={{
+                                                        fontSize:"14px"
+                                                    }}>
+                                                        {v.showst=== 3 ?(v.sc>0?v.sc:"暂无评分") : "想看"}
                                                     </span>
                                                 </div>
                                                 <div className={"actor line-ellipsis"}>
@@ -60,11 +62,11 @@ class On extends React.Component {
                                         </div>
                                         <div className={"button-block"}>
                                             <div className={"btn-normal"} style={{
-                                                backgroundColor: v.sc > 0 ? "#f03d37" : "#3c9fe6"
+                                                backgroundColor: v.showst=== 3 ? "#f03d37" : "#3c9fe6"
                                             }}>
                                                 <span>
                                                     {
-                                                        v.sc > 0 ? "购票" : "预售"
+                                                        v.showst === 3 ? "购票" : "预售"
                                                     }
                                                 </span>
                                             </div>

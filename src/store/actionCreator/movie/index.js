@@ -20,6 +20,11 @@ export const upCinemaList = data => ({
     type: actionType.GET_CINEMES,
     payload: data
 })
+export const upCheckSeat = data => ({
+    type: actionType.CHECK_SEAT,
+    payload: data
+})
+
 export default {
     getlist() {
         return async (dis) => {
@@ -97,7 +102,7 @@ export default {
             dispatch(upMovieDetail(data.detailMovie))
         };
     },
-    getCinemaList(offset = 0, id, tab) {
+    getCinemaList(offset = 0, id, tab,cityId=1) {
         console.log(tab);
 
         return async (dispatch) => {
@@ -116,9 +121,23 @@ export default {
                 stationId: -1,
                 updateShowDay: true,
                 reqId: 1574843774321,
-                cityId: 1,
+                cityId
             });
             dispatch(upCinemaList(data))
+        };
+    },
+    getCheckSeact(){
+        return async (dispatch) => {
+            const { data } = await axios.post("/ajax/seatingPlan?timestamp=1574998236740", {
+                cityId: 1,
+                ci: 1,
+                optimus_uuid:"96D985B00F3611EAAECC371C5FF06AB9DDCD2B1ACFC5404BB2041090A384364C",
+                optimus_platform: 3,
+                optimus_risk_level: 71,
+                optimus_code: 10,
+                seqNo: 201911290476435
+            });
+            dispatch(upCheckSeat(data.seatData))
         };
     }
 }

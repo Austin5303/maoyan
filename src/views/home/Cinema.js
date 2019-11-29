@@ -60,7 +60,7 @@ class Cinema extends React.Component {
     render() {
         return (
 
-            <div ref="getWidth" style={{ width: "100vw", overflow: "hidden", marginBottom: "50px" }}>
+            <div ref="getWidth" style={{ width: "100vw", overflow: "hidden", marginBottom: "50px",background:"white" }}>
                 <Link to="searchcinemas">搜索</Link>
                 {
                     this.state.data.cinemas ? this.state.data.cinemas.map(v => (
