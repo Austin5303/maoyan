@@ -77,7 +77,7 @@ class Cinema extends React.Component {
 
                 {
                     this.state.data.cinemas ? this.state.data.cinemas.map(v => (
-                        <div key={v.id} style={{ textAlign: "left", fontFamily: "PingFangSC-Regular", fontSize: "14px", color: "#777", backgroundSize: "1px", padding: "13px 15px 13px 0", marginLeft: "15px", backgroundColor: "#fff", position: "relative", borderBottom: "1px solid #eeeeee", width: "100vw", overflow: "hidden" }}>
+                        <div key={v.id} onClick={()=>this.props.history.push("/shows/"+v.id)} style={{ textAlign: "left", fontFamily: "PingFangSC-Regular", fontSize: "14px", color: "#777", backgroundSize: "1px", padding: "13px 15px 13px 0", marginLeft: "15px", backgroundColor: "#fff", position: "relative", borderBottom: "1px solid #eeeeee", width: "100vw", overflow: "hidden" }}>
                             <p style={{ whiteSpace: "nowrap", lineHeight: "23px", fontSize: "16px", color: "#000" }}>{v.nm}<span style={{ whiteSpace: "nowrap", lineHeight: 1.5, color: "#f03d37", fontSize: "18px", }}>{v.sellPrice}<span style={{ whiteSpace: "nowrap", fontSize: "11px", color: "#f03d37", marginLeft: "3px" }}>元起</span></span></p>
                             <p style={{ lineHeight: 1.5, fontSize: "13px", color: "#666", textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap", float: "left", color: "#666", width: "70vw" }}>{v.addr}</p><span style={{ marginRight: "5px" }}>{v.distance}</span>
                             <div style={{ color: "#589daf", marginTop: "5px", width: "100vw", }}>
