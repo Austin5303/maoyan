@@ -15,6 +15,7 @@ import City from "./views/City"
 import Cinema from './views/Cimena'
 import Asgard from './views/Asgard'
 import Seats from './views/Seats';
+import Deal from "./views/Deal"
 import Register from "./views/Register"
 class App extends React.Component {
   render() {
@@ -32,6 +33,7 @@ class App extends React.Component {
           <Route path={"/city"} component={City}></Route>
           <Route path={"/asgard/:movieid"} component={Asgard}></Route>
           <Route path={"/seats"} component={Seats}></Route>
+          <Route path={"/deal"} component={Deal}></Route>
           <Route path={"/"} component={Home}></Route>
         </Switch>
       </div>
