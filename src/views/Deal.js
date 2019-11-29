@@ -110,6 +110,7 @@ class Deal extends React.Component {
                         <span>小计 <b>￥</b>{count?count:this.props.location.state.price}</span>
                     </div>
                 </div>
+                <button onClick={()=>this.props.history.go(-1)}>111</button>
             </div>
         )
     }
@@ -122,7 +123,7 @@ class Deal extends React.Component {
         });
     }
     componentWillMount(){
-        
+
     }
 }
 // 设置要使用的数据状态
