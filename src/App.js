@@ -17,12 +17,14 @@ import Asgard from './views/Asgard'
 import Seats from './views/Seats';
 import Deal from "./views/Deal"
 import Register from "./views/Register"
+import Paydeal from './views/Paydeal'
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <Switch>
           <Route path={"/register"} component={Register} ></Route>
+          <Route path={"/paydeal"} component={Paydeal} ></Route>
           <Route path={"/cinema/movie/:id"} component={Cinema}></Route>
           <Route path={"/searchlist/movies"} component={MovieSearchList}></Route>
           <Route path={"/shows/:id"} component={Shows}></Route>

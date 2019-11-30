@@ -108,7 +108,7 @@ class Shows extends React.Component {
                                 </div></div>
                             </div></div>
                             <div className="k" >
-                            <Tabs tabs={tabs} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />} tabBarPosition='top' prerenderingSiblingsNumber={5} onTabClick={(tab) => {
+                            <Tabs tabs={tabs} initialPage={0} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />} tabBarPosition='top' prerenderingSiblingsNumber={5} onTabClick={(tab) => {
                                     // this.props.getCinemaList(0, this.props.match.params.id, tab.title)
                                     this.setState({
                                         title:tab.title

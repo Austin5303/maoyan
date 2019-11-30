@@ -9,17 +9,21 @@ import searchActionCreator from '../store/actionCreator/serach/index'
 import {
     connect
 } from "react-redux"
-
+import { NoticeBar, WhiteSpace } from 'antd-mobile';
+import { Modal, Button,  } from 'antd-mobile';
 
 class Deal extends React.Component {
     constructor(){
         super();
         this.state = {
             foods:[],
-            ref:"buynum"
+            ref:"buynum",
         }
     }
     render() {
+        const alert = Modal.alert;
+
+
         const {value, onIncreaseClick,onDecreaseClick,count} = this.props,
         btnStyle = {
             width: '30px',
@@ -46,12 +50,17 @@ class Deal extends React.Component {
             width:"30px",
             display:"inline-block",
             textAlign:"center"
-        };
+        }
+        
         return(
             
             <div className="deal">
                 
                 <div className="App-header nav-header">确认订单</div>
+                <WhiteSpace size="lg" style={{height:"0"}}/>
+                 <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}>
+                    谁他妈买小米啊！菠菜！菠菜贱卖！菠菜贱卖！！窝窝头，一块钱四个！！谁他妈买小米啊！妈妈我想吃烤山药，两个够吗！够了妈妈真好！谁他妈买小米啊！
+                </NoticeBar>
                 <div className="body-wrapper">
                     <section className="deal-info">
                         <header>
@@ -104,18 +113,37 @@ class Deal extends React.Component {
                     <p style={{fontSize:"16px",textAlign:"left",margin:"5px",color:"#333",}}>手机号:{localStorage.userName}</p>
                 </div>
 
-                <div className="bottom" style={{position:"fixed",width:"100%",bottom:"0",background:"#fff",padding:"10px"}}>
+                <div className="bottom" style={{position:"fixed",width:"100%",bottom:"0",background:"#fff"}}>
                     <div className="xiaoji" style={{height:"50px"}}>
                         <span style={{display:"inline-block",float:"left",fontSize:"16px",color:"#86C92F",margin:"14px"}}>随时可退</span>
                         <span style={{display:"inline-block",float:"right",fontSize:"16px",color:"#000",margin:"5px",paddingRight:"30px"}}>小计 <span>￥</span><span style={{fontSize:"30px",color:"#E54847"}}>{count?count:this.props.location.state.price}</span></span>
                     </div>
-                    <div style={{float:"left",width:"100%",textAlign:"center"}}>确认支付</div>
+                    {/* <div >
+                        <div style={{float:"left",width:"100%",textAlign:"center",background:"#FF9900",padding:"10px 0",fontSize:"20px",color:"#fff",borderRadius:"5px"}} >确认支付</div>
+                    </div> */}
+                    
+
+                    {/* <WhiteSpace /> */}
+                    <div style={{padding:"10px"}}>
+                         <Button  style={{width:"100%",textAlign:"center",background:"#FF9900",fontSize:"20px",color:"#fff",borderRadius:"5px"}}
+                    onClick={() =>
+                        alert('请支付', "共计"+(count?count:this.props.location.state.price)+"元", [
+                        { text: '取消', onPress: () => {} },
+                        { text: '去付款', onPress: () => this.props.history.push({pathname:"/paydeal",state:{price:count?count:this.props.location.state.price}})},
+                        ])
+                    }
+                    >
+                    确认支付
+                    </Button>
+                    </div>
+                   
                 </div>
+                
             </div>
         )
+        
     }
     componentDidMount(){
-        console.log(this.props)
         const {title} = this.props.location.state;
         const arr = title.split("+");
         this.setState({
