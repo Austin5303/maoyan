@@ -204,7 +204,7 @@ class Shows extends React.Component {
             <div className="tuan-title mb-line-b">影院超值套餐</div>
             {
             this.props.cinema.dealList ? this.props.cinema.dealList.dealList.map((v,i) => (
-                    <div className="tuan-item mb-line-b" key={i}>
+                    <div className="tuan-item mb-line-b" onClick={()=>this.props.history.push({ pathname: "/deal", state: {price:v.price,person:v.recommendPersonNum,title:v.title,img:v.imageUrl.replace("w.h", "440.0")} })} key={i}>
                         <img src={v.imageUrl.replace("w.h", "440.0")}></img>
                         {
                             v.cardTag?<span className="hot-tag">HOT</span>:""
@@ -222,7 +222,7 @@ class Shows extends React.Component {
                                     <span>¥</span><span className="num">{v.price}</span>
                                 </span>
                             </div>
-                            <div className="buy-btn"  onClick={()=>this.props.history.push({ pathname: "/deal", state: {price:v.price,person:v.recommendPersonNum,title:v.title,img:v.imageUrl.replace("w.h", "440.0")} })}>去购买</div>
+                            <div className="buy-btn"  >去购买</div>
                         </div>
                     </div>
             )) : ''

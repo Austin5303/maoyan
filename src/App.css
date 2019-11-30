@@ -1149,9 +1149,250 @@ margin-top: 0px;
 .deal .num i{
   float: right;
 }
-
-
-
+/* 阿斯加德 */
+.asgard .movie-info  {
+  padding: 20px;
+  color:#fff;
+  text-align: left;
+  line-height: 20px;
+}
+.asgard .movie-info .movie-info-top {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+}
+.asgard .movie-info .movie-cover {
+  float: left;
+  height:138px;
+  width: 100px;
+  position: relative;
+  flex-shrink: 0;
+}
+.asgard .movie-info .movie-desc {
+  flex-grow: 1;
+  margin-left: 12px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.asgard .movie-info .movie-desc .movie-desc-top {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+.asgard .movie-info .movie-desc .movie-cn-name {
+  font-size: 20px;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 700;
+}
+.movie-info .movie-desc .movie-en-name {
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 14px;
+  opacity: .6;
+}
+.movie-info .movie-desc .movie-other-info {
+  display: flex;
+  flex-grow: 1;
+  flex-flow: column;
+  justify-content: center;
+  font-size: 12px;
+  opacity: .6;
+  line-height: 20px;
+}
+.movie-info .movie-desc .movie-type {
+  display: flex;
+  align-items: center;
+}
+.movie-info .movie-desc .btns {
+  display: flex;
+  justify-content: space-between;
+}
+.movie-info .movie-desc .btns .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsla(0,0%,100%,.35);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+  border-radius: 5px;
+  font-size: 14px;
+  width: 47.61904762%;
+  height: 30px;
+  color: #fff;
+}
+.movie-info .movie-desc .btns .buttonno {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsla(0,0%,100%,.1);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+  border-radius: 5px;
+  font-size: 14px;
+  width: 47.61904762%;
+  height: 30px;
+  color: #fff;
+}
+.movie-info .movie-desc .btns .button img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+.movie-info button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  background-color: transparent;
+}
+.real-time-word-of-mouth {
+  background-color: rgba(0,0,0,.2);
+  box-shadow: 0 0 5px 0 hsla(0,0%,100%,.03);
+  border-radius: 10px;
+  margin-top: 16px;
+  padding: 6px 14px;
+}
+.real-time-word-of-mouth>.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.real-time-word-of-mouth>.top>.left {
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.real-time-word-of-mouth>.top img {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+}
+.img.noneBg {
+  background: none;
+}
+.real-time-word-of-mouth>.top>.right {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+}
+.real-time-word-of-mouth>.top>.right .num {
+  font-size: 11px;
+  margin-right: 2px;
+}
+.real-time-word-of-mouth>.top>.right>span {
+  opacity: .6;
+}
+.real-time-word-of-mouth>.top>.right .num.watched {
+  margin-left: 10px;
+}
+.real-time-word-of-mouth>.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.real-time-word-of-mouth>.middle>.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.real-time-word-of-mouth>.middle>.left .score {
+  font-size: 34px;
+  color: #ffb400;
+  line-height: 40px;
+}
+.real-time-word-of-mouth>.middle>.left .people-grade {
+  opacity: .4;
+  font-size: 10px;
+}
+.stars-percent-bar, .stars-percent-bar .stars {
+  display: flex;
+  align-items: center;
+}
+.stars-percent-bar .stars {
+  justify-content: flex-end;
+  width: 35px;
+}
+.stars-percent-bar .stars img {
+  height: 5px;
+  width: 5px;
+  margin-left: 1px;
+  opacity: .4;
+}
+.stars-percent-bar .bar {
+  width: 100px;
+  height: 5px;
+  background-color: hsla(0,0%,100%,.05);
+  border-radius: 1px;
+  margin-left: 6px;
+  margin-right: 5px;
+}
+.stars-percent-bar .bar>.percent {
+  height: 100%;
+  background-color: #ffb400;
+  border-radius: 1px;
+}
+.stars-percent-bar .percent-value {
+  opacity: .4;
+  font-size: 7px;
+}
+.brief-introduction {
+  position: relative;
+  padding: 16px 0 0;
+}
+.brief-introduction>.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brief-introduction>.title>span {
+  font-size: 15px;
+}
+.brief-introduction>.title>div button {
+  font-size: 12px;
+  opacity: .6;
+  color: #fff;
+  width: 45px;
+}
+.brief-introduction>.title>div button.open img {
+  transform: rotate(90deg);
+}
+.brief-introduction>.title>div button.close img {
+  transform: rotate(-90deg);
+}
+.brief-introduction>.title>div button img {
+  width: 5px;
+  height: 8px;
+  margin-left: 6px;
+  display: inline-block;
+}
+.brief-introduction>.content {
+  font-size: 15px;
+  line-height: 26px;
+  overflow: hidden;
+}
+.brief-introduction>.content p.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+.brief-introduction>.content p {
+  margin: .14rem 0;
+  text-align: justify;
+}
 /*郭义杰*/
 .page-wrap{
   width: 100%;

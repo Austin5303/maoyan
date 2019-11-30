@@ -72,7 +72,7 @@ class Cimema extends React.Component {
                         <div className={"poster-bg"} style={{
                             backgroundImage: "url(" + (this.props.movie.detailMovie.img ? this.props.movie.detailMovie.img.replace("w.h", "71.100") : null) + ")"
                         }}></div>
-                        <div className="detail box-flex">
+                        <div className="detail box-flex" onClick={()=>this.props.history.push("/asgard/"+this.props.movie.detailMovie.id)}>
                             <div className="poster">
                                 <img src={this.props.movie.detailMovie.img ? this.props.movie.detailMovie.img.replace("w.h", "148.208") : null} alt=""></img>
                             </div>
