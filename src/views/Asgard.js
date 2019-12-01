@@ -117,6 +117,7 @@ class Asgard extends React.Component {
                             
                         </div>
                         <div className="swiper-container">
+                            <span style={{fontSize:"15px",marginBottom:"8px",display:"inline-block"}}>剧照</span>
                             <div className="swiper-wrapper" >
                             {
                                 this.props.detail.photos ? this.props.detail.photos.map((v,i) => (
@@ -153,9 +154,9 @@ class Asgard extends React.Component {
             slidesPerView: 'auto',
             spaceBetween: 15,
             centeredSlides: true,
-            loop: true,
+            loop: false,
             observer: true,
-            observerParents: true,
+            // observerParents: true,
             // slideToClickedSlide: true,
         });
     }
