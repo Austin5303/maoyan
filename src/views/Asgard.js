@@ -4,6 +4,10 @@ import actioncreateor from '../store/actionCreator/movie/index'
 import { bindActionCreators } from 'redux'
 import Swiper from 'swiper/js/swiper.js';
 import 'swiper/css/swiper.min.css';
+import { Toast } from 'antd-mobile';
+
+
+
 class Asgard extends React.Component {
     constructor() {
         super();
@@ -130,8 +134,44 @@ class Asgard extends React.Component {
                         </div>
                     </div>:""
                 }
+                <section className="discussion">
+                    <header><span className="title">讨论</span></header>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                    <p style={{fontSize:"16px",marginBottom:"10px"}}>这个小气的猫眼，不给数据，你们自己讨论吧</p>
+                </section>
+                {
+                    this.props.detail.sc!==0?
+                    <div className="buy-ticket-btn can-buy ">
+                        <div className="buy-wrapper">
+                        <img className="img noneBg" alt=""  src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/share-icon.png"/>
+                        <a  className="goto-ticket" >特惠购票</a>
+                        </div>
+                    </div>:(this.state.wish?<div className="buy-ticket-btn can-buy ">
+                        <div className="buy-wrapper">
+                        <img className="img noneBg" alt=""  src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/share-icon.png"/>
+                        <a  className="goto-ticket" onClick={()=>this.changeWish2()}>标记想看</a>
+                        </div>
+                    </div>:'')
+
+                }
+                
             </div>
         )
+    }
+    showToast() {
+        Toast.info('已标记想看~', 1);
     }
     changeOpen(){
         this.setState({
@@ -142,6 +182,12 @@ class Asgard extends React.Component {
         this.setState({
             wish:!this.state.wish
         })
+    }
+    changeWish2(){
+        this.setState({
+            wish:!this.state.wish
+        })
+        this.showToast()
     }
     changeWatch(){
         this.setState({

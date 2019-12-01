@@ -70,7 +70,7 @@ class Cinema extends React.Component {
                     <div className="SearchAll-header">
                         <div className="input-wrapper">
                             <img className="search-icon" src={"http://s0.meituan.net/bs/?f=myfe/canary:/static/deploy/images/search.png"} alt="" />
-                            <input className="search-input" onClick={()=>this.props.history.push("/searchall")} style={{width:"30vw"}} type="text"  placeholder="搜影院"></input>
+                            <input className="search-input" onClick={()=>this.props.history.push("/searchcinemas")} style={{width:"30vw"}} type="text"  placeholder="搜影院"></input>
                         </div>
                     </div>
                 </div>
